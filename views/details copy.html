@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+        type="text/css">
+    <link href="/admin/assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
+    <link href="/admin/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/admin/assets/css/bootstrap_limitless.min.css" rel="stylesheet" type="text/css">
+    <link href="/admin/assets/css/layout.min.css" rel="stylesheet" type="text/css">
+    <link href="/admin/assets/css/components.min.css" rel="stylesheet" type="text/css">
+    <link href="/admin/assets/css/colors.min.css" rel="stylesheet" type="text/css">
+    <link href="/admin/assets/css/colors.min.css" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-bs4.min.css" rel="stylesheet">
+
+    <!-- Core JS files -->
+    <script src="/admin/assets/js/main/jquery.min.js"></script>
+    <script src="/admin/assets/js/main/bootstrap.bundle.min.js"></script>
+    <script src="/admin/assets/js/plugins/loaders/blockui.min.js"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script src="/admin/assets/js/plugins/editors/summernote/summernote.min.js"></script>
+    <script src="/admin/assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script src="/admin/assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+    <script src="/admin/assets/js/plugins/forms/styling/switchery.min.js"></script>
+    <script src="/admin/assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script src="/admin/assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script src="/admin/assets/js/plugins/pickers/daterangepicker.js"></script>
+
+    <script src="/admin/assets/js/app.js"></script>
+    <script src="/admin/assets/js/demo_pages/dashboard.js"></script>
+    <!-- /theme JS files -->
+
+</head>
+
+<body>
+
+    <!-- Main navbar -->
+    <div class="navbar navbar-expand-md navbar-dark">
+        <div class="navbar-brand wmin-200">
+            <a href="index.html" class="d-inline-block">
+                <!-- <h4>ADMIN</h4> -->
+                <img src="/admin/assets/images/logolaporin.png" alt="" width="130px"
+                    style="height: 30px; margin-bottom: 10px;">
+
+                <!-- <img src="/admin/assets/images/logo_light.png" alt=""> -->
+            </a>
+        </div>
+
+        <div class="d-md-none">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+                <i class="icon-tree5"></i>
+            </button>
+            <button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
+                <i class="icon-paragraph-justify3"></i>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-mobile">
+
+            <ul class="navbar-nav ml-md-auto mr-md-3">
+
+                <li class="nav-item dropdown dropdown-user">
+                    <a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle"
+                        data-toggle="dropdown">
+                        <img src="/admin/assets/images/placeholders/placeholder.jpg" class="rounded-circle mr-2"
+                            height="34" alt="">
+                        <span>{{.username}}</span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="#" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
+                        <a href="/post/logout" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /main navbar -->
+
+
+
+    <div class="content-wrapper mt-4">
+
+
+        <!-- Content area -->
+        <div class="container">
+
+            <div class="content">
+
+                <!-- Inner container -->
+                <div class="d-flex align-items-start flex-column flex-md-row">
+
+                    <!-- Left content -->
+                    <div class="w-100 overflow-auto order-2 order-md-1">
+
+                        <!-- Post -->
+                        <div class="card mt-3">
+                            <div class="card-body">
+                                <div class="mb-4">
+
+                                    <h4 class="font-weight-semibold mb-1">
+                                        <a href="#" class="text-default" style="font-size:30px">{{.title}}</a>
+                                    </h4>
+
+                                    <ul class="list-inline list-inline-dotted text-muted mb-3">
+                                        <li class="list-inline-item">By <a href="#"
+                                                class="text-muted">{{.full_name}}</a>
+                                        </li>
+                                        <li class="list-inline-item">{{.time}}</li>
+                                        {{if .pending}}
+                                        <li class="list-inline-item"><a href="#" class="text-warning">{{.status}}</a>
+                                        </li>
+                                        {{else}}
+                                        {{if .process}}
+                                        <li class="list-inline-item"><a href="#" class="text-info">{{.status}}</a></li>
+                                        {{else}}
+                                        <li class="list-inline-item"><a href="#" class="text-success">{{.status}}</a>
+                                        </li>
+
+                                        {{end}}
+                                        {{end}}
+
+                                        <!-- <li class="list-inline-item"><a href="#" class="text-muted">{{.status}}</a></li> -->
+                                        <li class="list-inline-item"><a href="#" class="text-muted"><i
+                                                    class="icon-heart6 font-size-base text-pink mr-2"></i> 281</a></li>
+                                    </ul>
+                                    <div class="mb-3" style="font-size: 17px;">
+                                        {{.laporan}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /post -->
+
+
+
+                        <!-- Comments -->
+                        <div class="card">
+                            <div class="card-header header-elements-inline">
+                                <h6 class="card-title font-weight-semibold">Discussion</h6>
+                                <div class="header-elements">
+                                    <ul class="list-inline list-inline-dotted text-muted mb-0">
+                                        <li class="list-inline-item">42 comments</li>
+                                        <li class="list-inline-item">75 pending review</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <ul class="media-list">
+                                    <li class="media flex-column flex-md-row">
+                                        <div class="mr-md-3 mb-2 mb-md-0">
+                                            <a href="#"><img src="/admin/assets/images/placeholders/placeholder.jpg"
+                                                    class="rounded-circle" width="38" height="38" alt=""></a>
+                                        </div>
+
+                                        <div class="media-body">
+                                            <div class="media-title">
+                                                <a href="#" class="font-weight-semibold">William Jennings</a>
+                                                <span class="text-muted ml-3">Just now</span>
+                                            </div>
+
+                                            <p>He moonlight difficult engrossed an it sportsmen. Interested has all
+                                                devonshire difficulty gay assistance joy. Unaffected at ye of compliment
+                                                alteration to.</p>
+
+                                            <ul class="list-inline list-inline-dotted font-size-sm">
+                                                <li class="list-inline-item">114 <a href="#"><i
+                                                            class="icon-arrow-up22 text-success"></i></a><a href="#"><i
+                                                            class="icon-arrow-down22 text-danger"></i></a></li>
+                                                <li class="list-inline-item"><a href="#">Reply</a></li>
+                                                <li class="list-inline-item"><a href="#">Edit</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li class="media flex-column flex-md-row">
+                                        <div class="mr-md-3 mb-2 mb-md-0">
+                                            <a href="#"><img src="/admin/assets/images/placeholders/placeholder.jpg"
+                                                    class="rounded-circle" width="38" height="38" alt=""></a>
+                                        </div>
+
+                                        <div class="media-body">
+                                            <div class="media-title">
+                                                <a href="#" class="font-weight-semibold">Margo Baker</a>
+                                                <span class="text-muted ml-3">5 minutes ago</span>
+                                            </div>
+
+                                            <p>Place voice no arise along to. Parlors waiting so against me no. Wishing
+                                                calling are warrant settled was luckily. Express besides it present if
+                                                at an
+                                                opinion visitor.</p>
+
+                                            <ul class="list-inline list-inline-dotted font-size-sm">
+                                                <li class="list-inline-item">90 <a href="#"><i
+                                                            class="icon-arrow-up22 text-success"></i></a><a href="#"><i
+                                                            class="icon-arrow-down22 text-danger"></i></a></li>
+                                                <li class="list-inline-item"><a href="#">Reply</a></li>
+                                                <li class="list-inline-item"><a href="#">Edit</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li class="media flex-column flex-md-row">
+                                        <div class="mr-md-3 mb-2 mb-md-0">
+                                            <a href="#"><img src="/admin/assets/images/placeholders/placeholder.jpg"
+                                                    class="rounded-circle" width="38" height="38" alt=""></a>
+                                        </div>
+
+                                        <div class="media-body">
+                                            <div class="media-title">
+                                                <a href="#" class="font-weight-semibold">James Alexander</a>
+                                                <span class="text-muted ml-3">7 minutes ago</span>
+                                            </div>
+
+                                            <p>Savings her pleased are several started females met. Short her not among
+                                                being any. Thing of judge fruit charm views do. Miles mr an forty along
+                                                as
+                                                he.</p>
+
+                                            <ul class="list-inline list-inline-dotted font-size-sm">
+                                                <li class="list-inline-item">70 <a href="#"><i
+                                                            class="icon-arrow-up22 text-success"></i></a><a href="#"><i
+                                                            class="icon-arrow-down22 text-danger"></i></a></li>
+                                                <li class="list-inline-item"><a href="#">Reply</a></li>
+                                                <li class="list-inline-item"><a href="#">Edit</a></li>
+                                            </ul>
+
+                                            <div class="media flex-column flex-md-row">
+                                                <div class="mr-md-3 mb-2 mb-md-0">
+                                                    <a href="#"><img
+                                                            src="/admin/assets/images/placeholders/placeholder.jpg"
+                                                            class="rounded-circle" width="38" height="38" alt=""></a>
+                                                </div>
+
+                                                <div class="media-body">
+                                                    <div class="media-title">
+                                                        <a href="#" class="font-weight-semibold">Jack Cooper</a>
+                                                        <span class="text-muted ml-3">10 minutes ago</span>
+                                                    </div>
+
+                                                    <p>She education get middleton day agreement performed preserved
+                                                        unwilling. Do however as pleased offence outward beloved by
+                                                        present.
+                                                        By outward neither he so covered.</p>
+
+                                                    <ul class="list-inline list-inline-dotted font-size-sm">
+                                                        <li class="list-inline-item">67 <a href="#"><i
+                                                                    class="icon-arrow-up22 text-success"></i></a><a
+                                                                href="#"><i
+                                                                    class="icon-arrow-down22 text-danger"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item"><a href="#">Reply</a></li>
+                                                        <li class="list-inline-item"><a href="#">Edit</a></li>
+                                                    </ul>
+
+                                                    <div class="media flex-column flex-md-row">
+                                                        <div class="mr-md-3 mb-2 mb-md-0">
+                                                            <a href="#"><img
+                                                                    src="/admin/assets/images/placeholders/placeholder.jpg"
+                                                                    class="rounded-circle" width="38" height="38"
+                                                                    alt=""></a>
+                                                        </div>
+
+                                                        <div class="media-body">
+                                                            <div class="media-title">
+                                                                <a href="#" class="font-weight-semibold">Natalie
+                                                                    Wallace</a>
+                                                                <span class="text-muted ml-3">1 hour ago</span>
+                                                            </div>
+
+                                                            <p>Juvenile proposal betrayed he an informed weddings
+                                                                followed.
+                                                                Precaution day see imprudence sympathize principles. At
+                                                                full
+                                                                leaf give quit to in they up.</p>
+
+                                                            <ul class="list-inline list-inline-dotted font-size-sm">
+                                                                <li class="list-inline-item">54 <a href="#"><i
+                                                                            class="icon-arrow-up22 text-success"></i></a><a
+                                                                        href="#"><i
+                                                                            class="icon-arrow-down22 text-danger"></i></a>
+                                                                </li>
+                                                                <li class="list-inline-item"><a href="#">Reply</a></li>
+                                                                <li class="list-inline-item"><a href="#">Edit</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="media flex-column flex-md-row">
+                                                        <div class="mr-md-3 mb-2 mb-md-0">
+                                                            <a href="#"><img
+                                                                    src="/admin/assets/images/placeholders/placeholder.jpg"
+                                                                    class="rounded-circle" width="38" height="38"
+                                                                    alt=""></a>
+                                                        </div>
+
+                                                        <div class="media-body">
+                                                            <div class="media-title">
+                                                                <a href="#" class="font-weight-semibold">Nicolette
+                                                                    Grey</a>
+                                                                <span class="text-muted ml-3">2 hours ago</span>
+                                                            </div>
+
+                                                            <p>Although moreover mistaken kindness me feelings do be
+                                                                marianne. Son over own nay with tell they cold upon are.
+                                                                Cordial village and settled she ability law herself.</p>
+
+                                                            <ul class="list-inline list-inline-dotted font-size-sm">
+                                                                <li class="list-inline-item">41 <a href="#"><i
+                                                                            class="icon-arrow-up22 text-success"></i></a><a
+                                                                        href="#"><i
+                                                                            class="icon-arrow-down22 text-danger"></i></a>
+                                                                </li>
+                                                                <li class="list-inline-item"><a href="#">Reply</a></li>
+                                                                <li class="list-inline-item"><a href="#">Edit</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="media flex-column flex-md-row">
+                                        <div class="mr-md-3 mb-2 mb-md-0">
+                                            <a href="#"><img src="/admin/assets/images/placeholders/placeholder.jpg"
+                                                    class="rounded-circle" width="38" height="38" alt=""></a>
+                                        </div>
+
+                                        <div class="media-body">
+                                            <div class="media-title">
+                                                <a href="#" class="font-weight-semibold">Victoria Johnson</a>
+                                                <span class="text-muted ml-3">3 hours ago</span>
+                                            </div>
+
+                                            <p>Finished why bringing but sir bachelor unpacked any thoughts. Unpleasing
+                                                unsatiable particular inquietude did nor sir.</p>
+
+                                            <ul class="list-inline list-inline-dotted font-size-sm">
+                                                <li class="list-inline-item">32 <a href="#"><i
+                                                            class="icon-arrow-up22 text-success"></i></a><a href="#"><i
+                                                            class="icon-arrow-down22 text-danger"></i></a></li>
+                                                <li class="list-inline-item"><a href="#">Reply</a></li>
+                                                <li class="list-inline-item"><a href="#">Edit</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <hr class="m-0">
+
+                            <div class="card-body">
+                                <h6 class="mb-3">Add comment</h6>
+                                <div class="mb-3">
+                                    <div id="add-comment">Get his declared appetite distance his together now families.
+                                        Friends am himself at on norland it viewing. Suspected elsewhere you belonging
+                                        continued commanded she...</div>
+                                </div>
+
+                                <div class="text-right">
+                                    <button type="button" class="btn bg-blue"><i class="icon-plus22 mr-1"></i> Add
+                                        comment</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /comments -->
+
+                    </div>
+                    <!-- /left content -->
+
+
+                </div>
+                <!-- /inner container -->
+
+            </div>
+            <!-- /content area -->
+        </div>
+
+
+
+        <!-- Footer -->
+        <div class="navbar navbar-expand-lg navbar-light">
+            <div class="text-center d-lg-none w-100">
+                <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse"
+                    data-target="#navbar-footer">
+                    <i class="icon-unfold mr-2"></i>
+                    Footer
+                </button>
+            </div>
+
+            <div class="navbar-collapse collapse" id="navbar-footer">
+                <span class="navbar-text">
+                    &copy; 2020 <a href="#">Laporin (UKK)</a> by <a href="http://themeforest.net/user/Kopyov"
+                        target="_blank">Muhammad Hajid Al Akhtar</a>
+                </span>
+
+                <ul class="navbar-nav ml-lg-auto">
+                    <li class="nav-item"><a href="https://kopyov.ticksy.com/" class="navbar-nav-link" target="_blank"><i
+                                class="icon-lifebuoy mr-2"></i> Support</a></li>
+                    <li class="nav-item"><a href="http://demo.interface.club/limitless/docs/" class="navbar-nav-link"
+                            target="_blank"><i class="icon-file-text2 mr-2"></i> Docs</a></li>
+                    <li class="nav-item"><a
+                            href="https://themeforest.net/item/limitless-responsive-web-application-kit/13080328?ref=kopyov"
+                            class="navbar-nav-link font-weight-semibold"><span class="text-pink-400"><i
+                                    class="icon-cart2 mr-2"></i> Purchase</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /footer -->
+
+</body>
+<!-- <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-bs4.min.js"></script> -->
+
+
+<script>
+    $(document).ready(function () {
+        $('#sumernote').summernote({
+            placeholder: 'write here...',
+            toolbar: [
+                // [groupName, [list of button]]
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']]
+            ]
+        });
+    });
+</script>
+
+</html>
