@@ -38,8 +38,7 @@ func ViewAdmin(w http.ResponseWriter, r *http.Request) {
 	for LaporanRow.Next() {
 		var each = model.Laporan{}
 		// var err = rows.Scan()
-
-		var err = LaporanRow.Scan(&each.Id, &each.Title, &each.Laporan, &each.User_id,&each.Username,&each.User_Foto,&each.Foto, &each.FullName, &each.Kategori, &each.Time, &each.Status)
+		var err = LaporanRow.Scan(&each.Id, &each.Title, &each.Laporan, &each.User_id, &each.Username, &each.User_Foto, &each.Foto, &each.FullName, &each.Kategori, &each.Time, &each.Status)
 
 		if err != nil {
 			fmt.Println(err.Error())
@@ -60,7 +59,7 @@ func ViewAdmin(w http.ResponseWriter, r *http.Request) {
 
 	for BlogRow.Next() {
 		var each = model.Blog{}
-		var err = BlogRow.Scan(&each.Id, &each.Title, &each.Isi, &each.Kategori, &each.Time)
+		var err = BlogRow.Scan(&each.Id, &each.User_id, &each.Title, &each.Isi, &each.Kategori, &each.Time)
 
 		if err != nil {
 			fmt.Println(err.Error())

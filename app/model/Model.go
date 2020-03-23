@@ -21,22 +21,26 @@ type Response struct {
 	Status int `json:"status"`
 	Data   []User
 }
+type reqBody struct {
+	Query string `json:"query"`
+}
 type Laporan struct {
-	Id       int           `json:"id"`
-	Title    string        `json:"Title"`
-	Laporan  template.HTML `json:"laporan"`
-	User_id  string        `json:"user_id"`
+	Id        int           `json:"id"`
+	Title     string        `json:"Title"`
+	Laporan   template.HTML `json:"laporan"`
+	User_id   string        `json:"user_id"`
 	Username  string        `json:"username"`
-	User_Foto  string        `json:"user_foto"`
-	Foto  string        `json:"Foto"`
-	FullName string        `json:"full_name"`
-	Kategori string        `json:"kategori"`
-	Time     string        `json:"time"`
-	Status   string        `json:"status"`
+	User_Foto string        `json:"user_foto"`
+	Foto      string        `json:"Foto"`
+	FullName  string        `json:"full_name"`
+	Kategori  string        `json:"kategori"`
+	Time      string        `json:"time"`
+	Status    string        `json:"status"`
 }
 
 type Blog struct {
 	Id       int           `json:"id"`
+	User_id  string        `json:"user_id"`
 	Title    string        `json:"title"`
 	Isi      template.HTML `json:"isi"`
 	Kategori string        `json:"kategori"`
@@ -44,9 +48,9 @@ type Blog struct {
 }
 
 type Follow struct {
-	Id       int           `json:"id"`
-	User_id    string        `json:"user_id"`
-	Target_id     string `json:"target_id"`
+	Id        int    `json:"id"`
+	User_id   string `json:"user_id"`
+	Target_id string `json:"target_id"`
 }
 
 type KomentarLaporan struct {

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <h1>tes123123123</h1>
+  <table>
+    <tr>
+      <th>TGL</th>
+      <th>Author</th>
+      <th>Laporan</th>
+      <th>Status</th>
+      <th>Instansi</th>
+    </tr>
+    {{range .laporan}}
+    <tr>
+      <td>{{.Time}}</td>
+      <td>{{.Username}}</td>
+      <td>{{.Title}}</td>
+      <td>{{.Status}}</td>
+      <td>{{.Kategori}}</td>
+      <td></td>
+    </tr>
+    {{end}}
+  </table>
+</body>
+
+</html>

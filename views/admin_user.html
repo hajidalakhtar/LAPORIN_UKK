@@ -284,13 +284,13 @@
                                                         <a href="#" class="list-icons-item dropdown-toggle caret-0"
                                                             data-toggle="dropdown"><i class="icon-menu7"></i></a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <button data-FullName="{{.FullName}}" data-Role="{{.Role}}"
+                                                            <button data-FullName="{{.FullName}}" data-Id="{{.Id}}" data-Role="{{.Role}}"
                                                                 data-Bidang="{{.Bidang}}" data-Gender="{{.Gender}}"
                                                                 data-NoTelp="{{.NoTelp}}" data-Alamat="{{.Alamat}}" data-Username="{{.Username}}" data-Foto="{{.Foto_profile}}" data-Email="{{.Email}}"   onclick="OpenModalEditUser()"
                                                                 class="dropdown-item"><i
                                                                     class="icon-sync text-warning"></i>
                                                                 Edit</button>
-                                                            <a href="#" class="dropdown-item"><i
+                                                            <a href="/api/delete/user/{{.Id}}" class="dropdown-item"><i
                                                                     class="icon-cross2 text-danger"></i> Delete</a>
                                                         </div>
                                                     </div>
@@ -331,10 +331,11 @@
                         <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Email:</label>
                           <input type="text" class="form-control" name="email" id="Email">
+                          <input type="hidden" class="form-control" name="id" id="Id">
                           <label for="recipient-name" class="col-form-label">Username:</label>
                           <input type="text" class="form-control" name="username" id="Username">
                             <label for="recipient-name" class="col-form-label">FullName:</label>
-                            <input type="text" class="form-control" name="FullName" id="FullName">
+                            <input type="text" class="form-control" name="fullname" id="FullName">
                             <label for="recipient-name" class="col-form-label">Role:</label>
                             <select name="role" id="" class="form-control">
                                 <option value="user">User</option>
@@ -348,7 +349,7 @@
                             <label for="recipient-name" class="col-form-label">Gender:</label>
                             <input type="text" class="form-control" name="gender" id="Gender">
                             <label for="recipient-name" class="col-form-label">NoTelp:</label>
-                            <input type="text" class="form-control" name="NoTelp" id="NoTelp">
+                            <input type="text" class="form-control" name="notelp" id="NoTelp">
                             <label for="recipient-name" class="col-form-label">Alamat:</label>
                             <input type="text" class="form-control" name="alamat" id="Alamat">
                             <label for="recipient-name" class="col-form-label">Foto:</label>

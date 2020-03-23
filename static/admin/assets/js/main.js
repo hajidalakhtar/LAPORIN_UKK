@@ -4,7 +4,7 @@
 //         $("#div1").html(result);
 //     }
 // });
-
+console.log("stesadsads")
 function gantiStatus(sel) {
     sel.submit();
     // setTimeout(() => {
@@ -16,6 +16,7 @@ function gantiStatus(sel) {
 
 function OpenModalEditUser() {
 
+  let id = event.target.getAttribute('data-Id');
     let FullName = event.target.getAttribute('data-FullName');
     let Role = event.target.getAttribute('data-Role');
     let Bidang = event.target.getAttribute('data-Bidang');
@@ -26,8 +27,9 @@ function OpenModalEditUser() {
     let Email = event.target.getAttribute('data-Email');
     let username = event.target.getAttribute('data-Username');
 
-    console.log("email"+Email)
+    console.log("emailsss"+Email)
 
+    $("#Id").val(id)
     $("#FullName").val(FullName)
     $("#Role").val(Role)
     $("#Bidang").val(Bidang)
@@ -39,5 +41,5 @@ function OpenModalEditUser() {
     $("#Username").val(username)
 
 
-    // $('#edit_modal').modal('show')
+    $('#edit_modal').modal('show')
 }

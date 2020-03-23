@@ -36,7 +36,7 @@ func ViewBlogDetails(w http.ResponseWriter, r *http.Request) {
 
 	for rows.Next() {
 		var each = model.Blog{}
-		var err = rows.Scan(&each.Id, &each.Title, &each.Isi, &each.Kategori, &each.Time)
+		var err = rows.Scan(&each.Id, &each.User_id, &each.Title, &each.Isi, &each.Kategori, &each.Time)
 
 		if err != nil {
 			fmt.Println(err.Error())
@@ -53,7 +53,11 @@ func ViewBlogDetails(w http.ResponseWriter, r *http.Request) {
 }
 
 func PostBlog(w http.ResponseWriter, r *http.Request) {
-
+	session, errsession := store.Get(r, "login")
+	if errsession != nil {
+		fmt.Println("error")
+	}
+	user_id := session.Values["user_id"]
 	title := r.FormValue("title")
 	isi := r.FormValue("isi")
 	kategori := r.FormValue("kategori")
@@ -65,7 +69,7 @@ func PostBlog(w http.ResponseWriter, r *http.Request) {
 	}
 	defer db.Close()
 
-	_, err = db.Exec("INSERT INTO `blog`(`Id`, `Title`, `Isi`, `Kategori`, `Time`) VALUES (?,?,?,?,?)", nil, title, isi, kategori, date.Format("02-Jan-2006"))
+	_, err = db.Exec("INSERT INTO `blog`(`Id`, `User_id`, `Title`, `Isi`, `Kategori`, `Time`) VALUES (?,?,?,?,?,?)", nil,user_id ,title, isi, kategori, date.Format("02-Jan-2006"))
 	if err != nil {
 		fmt.Println(err.Error())
 		return
@@ -95,7 +99,7 @@ func ViewCreateBlog(w http.ResponseWriter, r *http.Request) {
 
 	for BlogRow.Next() {
 		var each = model.Blog{}
-		var err = BlogRow.Scan(&each.Id, &each.Title, &each.Isi, &each.Kategori, &each.Time)
+		var err = BlogRow.Scan(&each.Id, &each.User_id, &each.Title, &each.Isi, &each.Kategori, &each.Time)
 
 		if err != nil {
 			fmt.Println(err.Error())

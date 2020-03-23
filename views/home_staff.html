@@ -8,8 +8,7 @@
 	<title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
 
 	<!-- Global stylesheets -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
-		type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
 	<link href="admin/assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
 	<link href="admin/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="admin/assets/css/bootstrap_limitless.min.css" rel="stylesheet" type="text/css">
@@ -43,6 +42,7 @@
 	<script src="admin/assets/js/demo_pages/uploader_dropzone.js"></script>
 	<script src="admin/assets/js/app.js"></script>
 	<script src="admin/assets/js/demo_pages/dashboard.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 </head>
 
@@ -52,11 +52,7 @@
 	<div class="navbar navbar-expand-md navbar-dark">
 		<div class="navbar-brand wmin-200">
 			<a href="index.html" class="d-inline-block">
-				<!-- <h4>ADMIN</h4> -->
-				<img src="/admin/assets/images/logolaporin.png" alt="" width="130px"
-					style="height: 30px; margin-bottom: 10px;">
-
-				<!-- <img src="/admin/assets/images/logo_light.png" alt=""> -->
+				<img src="admin/assets/images/logo_light.png" alt="">
 			</a>
 		</div>
 
@@ -68,16 +64,13 @@
 				<i class="icon-paragraph-justify3"></i>
 			</button>
 		</div>
-
 		<div class="collapse navbar-collapse" id="navbar-mobile">
 
 			<ul class="navbar-nav ml-md-auto mr-md-3">
 
 				<li class="nav-item dropdown dropdown-user">
-					<a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle"
-						data-toggle="dropdown">
-						<img src="/admin/assets/images/placeholders/placeholder.jpg" class="rounded-circle mr-2"
-							height="34" alt="">
+					<a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
+						<img src="admin/assets/images/placeholders/placeholder.jpg" class="rounded-circle mr-2" height="34" alt="">
 						<span>{{.username}}</span>
 					</a>
 
@@ -136,16 +129,7 @@
 				<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 			</div>
 
-			<div class="header-elements d-none mb-3 mb-md-0">
-				<div class="d-flex justify-content-center">
-					<a href="#" class="btn btn-link btn-float text-default"><i
-							class="icon-bars-alt text-indigo-400"></i> <span>Statistics</span></a>
-					<a href="#" class="btn btn-link btn-float text-default"><i
-							class="icon-calculator text-indigo-400"></i> <span>Invoices</span></a>
-					<a href="#" class="btn btn-link btn-float text-default"><i
-							class="icon-calendar5 text-indigo-400"></i> <span>Schedule</span></a>
-				</div>
-			</div>
+
 		</div>
 	</div>
 	<!-- /page header -->
@@ -190,8 +174,7 @@
 						<div class="card-body">
 							<div class="media">
 								<div class="mr-3">
-									<a href="#"><img src="admin/assets/images/placeholders/placeholder.jpg" width="38"
-											height="38" class="rounded-circle" alt=""></a>
+									<a href="#"><img src="admin/assets/images/placeholders/placeholder.jpg" width="38" height="38" class="rounded-circle" alt=""></a>
 								</div>
 
 								<div class="media-body">
@@ -216,8 +199,7 @@
 
 							<!-- Main -->
 							<li class="nav-item-header mt-0">
-								<div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu"
-									title="Main"></i>
+								<div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu" title="Main"></i>
 							</li>
 							<li class="nav-item">
 								<a href="index.html" class="nav-link active">
@@ -232,18 +214,12 @@
 								<a href="#" class="nav-link"><i class="icon-copy"></i> <span>Layouts</span></a>
 
 								<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-									<li class="nav-item"><a href="../../../../layout_1/LTR/default/full/index.html"
-											class="nav-link">Default layout</a></li>
-									<li class="nav-item"><a href="../../../../layout_2/LTR/default/full/index.html"
-											class="nav-link">Layout 2</a></li>
+									<li class="nav-item"><a href="../../../../layout_1/LTR/default/full/index.html" class="nav-link">Default layout</a></li>
+									<li class="nav-item"><a href="../../../../layout_2/LTR/default/full/index.html" class="nav-link">Layout 2</a></li>
 									<li class="nav-item"><a href="index.html" class="nav-link active">Layout 3</a></li>
-									<li class="nav-item"><a href="../../../../layout_4/LTR/default/full/index.html"
-											class="nav-link">Layout 4</a></li>
-									<li class="nav-item"><a href="../../../../layout_5/LTR/default/full/index.html"
-											class="nav-link">Layout 5</a></li>
-									<li class="nav-item"><a href="../../../../layout_6/LTR/default/full/index.html"
-											class="nav-link disabled">Layout 6 <span
-												class="badge bg-transparent align-self-center ml-auto">Coming
+									<li class="nav-item"><a href="../../../../layout_4/LTR/default/full/index.html" class="nav-link">Layout 4</a></li>
+									<li class="nav-item"><a href="../../../../layout_5/LTR/default/full/index.html" class="nav-link">Layout 5</a></li>
+									<li class="nav-item"><a href="../../../../layout_6/LTR/default/full/index.html" class="nav-link disabled">Layout 6 <span class="badge bg-transparent align-self-center ml-auto">Coming
 												soon</span></a></li>
 								</ul>
 							</li>
@@ -252,15 +228,10 @@
 
 								<ul class="nav nav-group-sub" data-submenu-title="Themes">
 									<li class="nav-item"><a href="index.html" class="nav-link active">Default</a></li>
-									<li class="nav-item"><a href="../../../LTR/material/full/index.html"
-											class="nav-link">Material</a></li>
-									<li class="nav-item"><a href="../../../LTR/dark/full/index.html"
-											class="nav-link disabled">Dark <span
-												class="badge bg-transparent align-self-center ml-auto">Coming
+									<li class="nav-item"><a href="../../../LTR/material/full/index.html" class="nav-link">Material</a></li>
+									<li class="nav-item"><a href="../../../LTR/dark/full/index.html" class="nav-link disabled">Dark <span class="badge bg-transparent align-self-center ml-auto">Coming
 												soon</span></a></li>
-									<li class="nav-item"><a href="../../../LTR/clean/full/index.html"
-											class="nav-link disabled">Clean <span
-												class="badge bg-transparent align-self-center ml-auto">Coming
+									<li class="nav-item"><a href="../../../LTR/clean/full/index.html" class="nav-link disabled">Clean <span class="badge bg-transparent align-self-center ml-auto">Coming
 												soon</span></a></li>
 								</ul>
 							</li>
@@ -268,8 +239,7 @@
 								<a href="#" class="nav-link"><i class="icon-stack"></i> <span>Starter kit</span></a>
 
 								<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-									<li class="nav-item"><a href="../seed/layout_nav_horizontal.html"
-											class="nav-link">Horizontal navigation</a></li>
+									<li class="nav-item"><a href="../seed/layout_nav_horizontal.html" class="nav-link">Horizontal navigation</a></li>
 									<li class="nav-item"><a href="../seed/sidebar_none.html" class="nav-link">No
 											sidebar</a></li>
 									<li class="nav-item"><a href="../seed/sidebar_main.html" class="nav-link">1
@@ -277,44 +247,35 @@
 									<li class="nav-item nav-item-submenu">
 										<a href="#" class="nav-link">2 sidebars</a>
 										<ul class="nav nav-group-sub">
-											<li class="nav-item"><a href="../seed/sidebar_secondary.html"
-													class="nav-link">Secondary sidebar</a></li>
-											<li class="nav-item"><a href="../seed/sidebar_right.html"
-													class="nav-link">Right sidebar</a></li>
+											<li class="nav-item"><a href="../seed/sidebar_secondary.html" class="nav-link">Secondary sidebar</a></li>
+											<li class="nav-item"><a href="../seed/sidebar_right.html" class="nav-link">Right sidebar</a></li>
 										</ul>
 									</li>
 									<li class="nav-item nav-item-submenu">
 										<a href="#" class="nav-link">3 sidebars</a>
 										<ul class="nav nav-group-sub">
-											<li class="nav-item"><a href="../seed/sidebar_right_hidden.html"
-													class="nav-link">Right sidebar hidden</a></li>
-											<li class="nav-item"><a href="../seed/sidebar_right_visible.html"
-													class="nav-link">Right sidebar visible</a></li>
+											<li class="nav-item"><a href="../seed/sidebar_right_hidden.html" class="nav-link">Right sidebar hidden</a></li>
+											<li class="nav-item"><a href="../seed/sidebar_right_visible.html" class="nav-link">Right sidebar visible</a></li>
 										</ul>
 									</li>
-									<li class="nav-item"><a href="../seed/sidebar_sections.html"
-											class="nav-link">Sectioned sidebar</a></li>
-									<li class="nav-item"><a href="../seed/sidebar_stretched.html"
-											class="nav-link">Stretched sidebar</a></li>
+									<li class="nav-item"><a href="../seed/sidebar_sections.html" class="nav-link">Sectioned sidebar</a></li>
+									<li class="nav-item"><a href="../seed/sidebar_stretched.html" class="nav-link">Stretched sidebar</a></li>
 									<li class="nav-item-divider"></li>
 									<li class="nav-item"><a href="../seed/navbar_fixed_main.html" class="nav-link">Fixed
 											main navbar</a></li>
-									<li class="nav-item"><a href="../seed/navbar_fixed_secondary.html"
-											class="nav-link">Fixed secondary navbar</a></li>
+									<li class="nav-item"><a href="../seed/navbar_fixed_secondary.html" class="nav-link">Fixed secondary navbar</a></li>
 									<li class="nav-item"><a href="../seed/navbar_fixed_both.html" class="nav-link">Both
 											navbars fixed</a></li>
 									<li class="nav-item"><a href="../seed/layout_boxed.html" class="nav-link">Boxed
 											layout</a></li>
 								</ul>
 							</li>
-							<li class="nav-item"><a href="../../../RTL/default/full/index.html" class="nav-link"><i
-										class="icon-width"></i> <span>RTL version</span></a></li>
+							<li class="nav-item"><a href="../../../RTL/default/full/index.html" class="nav-link"><i class="icon-width"></i> <span>RTL version</span></a></li>
 							<!-- /main -->
 
 							<!-- Layout -->
 							<li class="nav-item-header">
-								<div class="text-uppercase font-size-xs line-height-xs">Layout</div> <i
-									class="icon-menu" title="Layout options"></i>
+								<div class="text-uppercase font-size-xs line-height-xs">Layout</div> <i class="icon-menu" title="Layout options"></i>
 							</li>
 							<li class="nav-item nav-item-submenu">
 								<a href="#" class="nav-link"><i class="icon-stack2"></i> <span>Page layouts</span></a>
@@ -322,18 +283,14 @@
 								<ul class="nav nav-group-sub" data-submenu-title="Page layouts">
 									<li class="nav-item"><a href="layout_navbar_fixed_main.html" class="nav-link">Fixed
 											main navbar</a></li>
-									<li class="nav-item"><a href="layout_navbar_sticky_secondary.html"
-											class="nav-link">Sticky secondary navbar</a></li>
-									<li class="nav-item"><a href="layout_navbar_hideable_main.html"
-											class="nav-link">Hideable main navbar</a></li>
-									<li class="nav-item"><a href="layout_navbar_hideable_secondary.html"
-											class="nav-link">Hideable secondary navbar</a></li>
+									<li class="nav-item"><a href="layout_navbar_sticky_secondary.html" class="nav-link">Sticky secondary navbar</a></li>
+									<li class="nav-item"><a href="layout_navbar_hideable_main.html" class="nav-link">Hideable main navbar</a></li>
+									<li class="nav-item"><a href="layout_navbar_hideable_secondary.html" class="nav-link">Hideable secondary navbar</a></li>
 									<li class="nav-item"><a href="layout_footer_fixed.html" class="nav-link">Fixed
 											footer</a></li>
 									<li class="nav-item"><a href="layout_footer_hideable.html" class="nav-link">Hideable
 											footer</a></li>
-									<li class="nav-item"><a href="layout_sidebar_stretched.html"
-											class="nav-link">Stretched sidebar</a></li>
+									<li class="nav-item"><a href="layout_sidebar_stretched.html" class="nav-link">Stretched sidebar</a></li>
 									<li class="nav-item"><a href="layout_without_header.html" class="nav-link">Without
 											page header</a></li>
 									<li class="nav-item-divider"></li>
@@ -353,9 +310,7 @@
 								<ul class="nav nav-group-sub" data-submenu-title="Content styling">
 									<li class="nav-item"><a href="content_page_header.html" class="nav-link">Page
 											header</a></li>
-									<li class="nav-item"><a href="content_page_footer.html"
-											class="nav-link disabled">Page footer <span
-												class="badge bg-transparent align-self-center ml-auto">Coming
+									<li class="nav-item"><a href="content_page_footer.html" class="nav-link disabled">Page footer <span class="badge bg-transparent align-self-center ml-auto">Coming
 												soon</span></a></li>
 								</ul>
 							</li>
@@ -366,79 +321,50 @@
 									<li class="nav-item nav-item-submenu">
 										<a href="#" class="nav-link">Main sidebar</a>
 										<ul class="nav nav-group-sub">
-											<li class="nav-item"><a href="sidebar_default_collapse.html"
-													class="nav-link">Default collapsible</a></li>
-											<li class="nav-item"><a href="sidebar_default_hide.html"
-													class="nav-link">Default hideable</a></li>
-											<li class="nav-item"><a href="sidebar_default_hidden.html"
-													class="nav-link">Default hidden</a></li>
-											<li class="nav-item"><a href="sidebar_mini_collapse.html"
-													class="nav-link">Mini collapsible</a></li>
+											<li class="nav-item"><a href="sidebar_default_collapse.html" class="nav-link">Default collapsible</a></li>
+											<li class="nav-item"><a href="sidebar_default_hide.html" class="nav-link">Default hideable</a></li>
+											<li class="nav-item"><a href="sidebar_default_hidden.html" class="nav-link">Default hidden</a></li>
+											<li class="nav-item"><a href="sidebar_mini_collapse.html" class="nav-link">Mini collapsible</a></li>
 											<li class="nav-item"><a href="sidebar_mini_hide.html" class="nav-link">Mini
 													hideable</a></li>
-											<li class="nav-item"><a href="sidebar_mini_hidden.html"
-													class="nav-link">Mini hidden</a></li>
+											<li class="nav-item"><a href="sidebar_mini_hidden.html" class="nav-link">Mini hidden</a></li>
 											<li class="nav-item-divider"></li>
-											<li class="nav-item"><a href="sidebar_default_sections.html"
-													class="nav-link">Sectioned sidebar</a></li>
-											<li class="nav-item"><a href="sidebar_default_stretched.html"
-													class="nav-link">Stretched sidebar</a></li>
-											<li class="nav-item"><a href="sidebar_default_color_dark.html"
-													class="nav-link">Dark color</a></li>
-											<li class="nav-item"><a href="sidebar_default_color_custom.html"
-													class="nav-link">Custom color</a></li>
-											<li class="nav-item"><a href="sidebar_default_color_sections_custom.html"
-													class="nav-link">Custom sections color</a></li>
+											<li class="nav-item"><a href="sidebar_default_sections.html" class="nav-link">Sectioned sidebar</a></li>
+											<li class="nav-item"><a href="sidebar_default_stretched.html" class="nav-link">Stretched sidebar</a></li>
+											<li class="nav-item"><a href="sidebar_default_color_dark.html" class="nav-link">Dark color</a></li>
+											<li class="nav-item"><a href="sidebar_default_color_custom.html" class="nav-link">Custom color</a></li>
+											<li class="nav-item"><a href="sidebar_default_color_sections_custom.html" class="nav-link">Custom sections color</a></li>
 										</ul>
 									</li>
 									<li class="nav-item nav-item-submenu">
 										<a href="#" class="nav-link">Secondary sidebar</a>
 										<ul class="nav nav-group-sub">
-											<li class="nav-item"><a href="sidebar_secondary_after.html"
-													class="nav-link">After default</a></li>
-											<li class="nav-item"><a href="sidebar_secondary_before.html"
-													class="nav-link">Before default</a></li>
-											<li class="nav-item"><a href="sidebar_secondary_hidden.html"
-													class="nav-link">Hidden by default</a></li>
+											<li class="nav-item"><a href="sidebar_secondary_after.html" class="nav-link">After default</a></li>
+											<li class="nav-item"><a href="sidebar_secondary_before.html" class="nav-link">Before default</a></li>
+											<li class="nav-item"><a href="sidebar_secondary_hidden.html" class="nav-link">Hidden by default</a></li>
 											<li class="nav-item-divider"></li>
-											<li class="nav-item"><a href="sidebar_secondary_sections.html"
-													class="nav-link">Sectioned sidebar</a></li>
-											<li class="nav-item"><a href="sidebar_secondary_stretched.html"
-													class="nav-link">Stretched sidebar</a></li>
-											<li class="nav-item"><a href="sidebar_secondary_color_dark.html"
-													class="nav-link">Dark color</a></li>
-											<li class="nav-item"><a href="sidebar_secondary_color_custom.html"
-													class="nav-link">Custom color</a></li>
-											<li class="nav-item"><a href="sidebar_secondary_color_sections_custom.html"
-													class="nav-link">Custom sections color</a></li>
+											<li class="nav-item"><a href="sidebar_secondary_sections.html" class="nav-link">Sectioned sidebar</a></li>
+											<li class="nav-item"><a href="sidebar_secondary_stretched.html" class="nav-link">Stretched sidebar</a></li>
+											<li class="nav-item"><a href="sidebar_secondary_color_dark.html" class="nav-link">Dark color</a></li>
+											<li class="nav-item"><a href="sidebar_secondary_color_custom.html" class="nav-link">Custom color</a></li>
+											<li class="nav-item"><a href="sidebar_secondary_color_sections_custom.html" class="nav-link">Custom sections color</a></li>
 										</ul>
 									</li>
 									<li class="nav-item nav-item-submenu">
 										<a href="#" class="nav-link">Right sidebar</a>
 										<ul class="nav nav-group-sub">
-											<li class="nav-item"><a href="sidebar_right_default_collapse.html"
-													class="nav-link">Show - collapse main</a></li>
-											<li class="nav-item"><a href="sidebar_right_default_hide.html"
-													class="nav-link">Show - hide main</a></li>
-											<li class="nav-item"><a href="sidebar_right_default_toggle.html"
-													class="nav-link">Show - fix default width</a></li>
-											<li class="nav-item"><a href="sidebar_right_mini_toggle.html"
-													class="nav-link">Show - fix mini width</a></li>
-											<li class="nav-item"><a href="sidebar_right_secondary_hide.html"
-													class="nav-link">Show - hide secondary</a></li>
-											<li class="nav-item"><a href="sidebar_right_visible.html"
-													class="nav-link">Visible by default</a></li>
+											<li class="nav-item"><a href="sidebar_right_default_collapse.html" class="nav-link">Show - collapse main</a></li>
+											<li class="nav-item"><a href="sidebar_right_default_hide.html" class="nav-link">Show - hide main</a></li>
+											<li class="nav-item"><a href="sidebar_right_default_toggle.html" class="nav-link">Show - fix default width</a></li>
+											<li class="nav-item"><a href="sidebar_right_mini_toggle.html" class="nav-link">Show - fix mini width</a></li>
+											<li class="nav-item"><a href="sidebar_right_secondary_hide.html" class="nav-link">Show - hide secondary</a></li>
+											<li class="nav-item"><a href="sidebar_right_visible.html" class="nav-link">Visible by default</a></li>
 											<li class="nav-item-divider"></li>
-											<li class="nav-item"><a href="sidebar_right_sections.html"
-													class="nav-link">Sectioned sidebar</a></li>
-											<li class="nav-item"><a href="sidebar_right_stretched.html"
-													class="nav-link">Stretched sidebar</a></li>
-											<li class="nav-item"><a href="sidebar_right_color_dark.html"
-													class="nav-link">Dark color</a></li>
-											<li class="nav-item"><a href="sidebar_right_color_custom.html"
-													class="nav-link">Custom color</a></li>
-											<li class="nav-item"><a href="sidebar_right_color_sections_custom.html"
-													class="nav-link">Custom sections color</a></li>
+											<li class="nav-item"><a href="sidebar_right_sections.html" class="nav-link">Sectioned sidebar</a></li>
+											<li class="nav-item"><a href="sidebar_right_stretched.html" class="nav-link">Stretched sidebar</a></li>
+											<li class="nav-item"><a href="sidebar_right_color_dark.html" class="nav-link">Dark color</a></li>
+											<li class="nav-item"><a href="sidebar_right_color_custom.html" class="nav-link">Custom color</a></li>
+											<li class="nav-item"><a href="sidebar_right_color_sections_custom.html" class="nav-link">Custom sections color</a></li>
 										</ul>
 									</li>
 									<li class="nav-item-divider"></li>
@@ -452,40 +378,28 @@
 									<li class="nav-item nav-item-submenu">
 										<a href="#" class="nav-link">Single navbar</a>
 										<ul class="nav nav-group-sub">
-											<li class="nav-item"><a href="navbar_single_top_static.html"
-													class="nav-link">Single top static</a></li>
-											<li class="nav-item"><a href="navbar_single_top_fixed.html"
-													class="nav-link">Single top fixed</a></li>
-											<li class="nav-item"><a href="navbar_single_bottom_static.html"
-													class="nav-link">Single bottom static</a></li>
-											<li class="nav-item"><a href="navbar_single_bottom_fixed.html"
-													class="nav-link">Single bottom fixed</a></li>
+											<li class="nav-item"><a href="navbar_single_top_static.html" class="nav-link">Single top static</a></li>
+											<li class="nav-item"><a href="navbar_single_top_fixed.html" class="nav-link">Single top fixed</a></li>
+											<li class="nav-item"><a href="navbar_single_bottom_static.html" class="nav-link">Single bottom static</a></li>
+											<li class="nav-item"><a href="navbar_single_bottom_fixed.html" class="nav-link">Single bottom fixed</a></li>
 										</ul>
 									</li>
 									<li class="nav-item nav-item-submenu">
 										<a href="#" class="nav-link">Multiple navbars</a>
 										<ul class="nav nav-group-sub">
-											<li class="nav-item"><a href="navbar_multiple_top_static.html"
-													class="nav-link">Multiple top static</a></li>
-											<li class="nav-item"><a href="navbar_multiple_top_fixed.html"
-													class="nav-link">Multiple top fixed</a></li>
-											<li class="nav-item"><a href="navbar_multiple_bottom_static.html"
-													class="nav-link">Multiple bottom static</a></li>
-											<li class="nav-item"><a href="navbar_multiple_bottom_fixed.html"
-													class="nav-link">Multiple bottom fixed</a></li>
-											<li class="nav-item"><a href="navbar_multiple_top_bottom.html"
-													class="nav-link">Multiple - top and bottom</a></li>
-											<li class="nav-item"><a href="navbar_multiple_secondary_sticky.html"
-													class="nav-link">Multiple - secondary sticky</a></li>
+											<li class="nav-item"><a href="navbar_multiple_top_static.html" class="nav-link">Multiple top static</a></li>
+											<li class="nav-item"><a href="navbar_multiple_top_fixed.html" class="nav-link">Multiple top fixed</a></li>
+											<li class="nav-item"><a href="navbar_multiple_bottom_static.html" class="nav-link">Multiple bottom static</a></li>
+											<li class="nav-item"><a href="navbar_multiple_bottom_fixed.html" class="nav-link">Multiple bottom fixed</a></li>
+											<li class="nav-item"><a href="navbar_multiple_top_bottom.html" class="nav-link">Multiple - top and bottom</a></li>
+											<li class="nav-item"><a href="navbar_multiple_secondary_sticky.html" class="nav-link">Multiple - secondary sticky</a></li>
 										</ul>
 									</li>
 									<li class="nav-item nav-item-submenu">
 										<a href="#" class="nav-link">Content navbar</a>
 										<ul class="nav nav-group-sub">
-											<li class="nav-item"><a href="navbar_component_single.html"
-													class="nav-link">Single navbar</a></li>
-											<li class="nav-item"><a href="navbar_component_multiple.html"
-													class="nav-link">Multiple navbars</a></li>
+											<li class="nav-item"><a href="navbar_component_single.html" class="nav-link">Single navbar</a></li>
+											<li class="nav-item"><a href="navbar_component_multiple.html" class="nav-link">Multiple navbars</a></li>
 										</ul>
 									</li>
 									<li class="nav-item-divider"></li>
@@ -503,36 +417,24 @@
 								<a href="#" class="nav-link"><i class="icon-sort"></i> <span>Vertical
 										navigation</span></a>
 								<ul class="nav nav-group-sub" data-submenu-title="Vertical navigation">
-									<li class="nav-item"><a href="navigation_vertical_collapsible.html"
-											class="nav-link">Collapsible menu</a></li>
-									<li class="nav-item"><a href="navigation_vertical_accordion.html"
-											class="nav-link">Accordion menu</a></li>
-									<li class="nav-item"><a href="navigation_vertical_bordered.html"
-											class="nav-link">Bordered navigation</a></li>
-									<li class="nav-item"><a href="navigation_vertical_right_icons.html"
-											class="nav-link">Right icons</a></li>
-									<li class="nav-item"><a href="navigation_vertical_badges.html"
-											class="nav-link">Badges</a></li>
-									<li class="nav-item"><a href="navigation_vertical_disabled.html"
-											class="nav-link">Disabled items</a></li>
+									<li class="nav-item"><a href="navigation_vertical_collapsible.html" class="nav-link">Collapsible menu</a></li>
+									<li class="nav-item"><a href="navigation_vertical_accordion.html" class="nav-link">Accordion menu</a></li>
+									<li class="nav-item"><a href="navigation_vertical_bordered.html" class="nav-link">Bordered navigation</a></li>
+									<li class="nav-item"><a href="navigation_vertical_right_icons.html" class="nav-link">Right icons</a></li>
+									<li class="nav-item"><a href="navigation_vertical_badges.html" class="nav-link">Badges</a></li>
+									<li class="nav-item"><a href="navigation_vertical_disabled.html" class="nav-link">Disabled items</a></li>
 								</ul>
 							</li>
 							<li class="nav-item nav-item-submenu">
 								<a href="#" class="nav-link"><i class="icon-transmission"></i> <span>Horizontal
 										navigation</span></a>
 								<ul class="nav nav-group-sub" data-submenu-title="Horizontal navigation">
-									<li class="nav-item"><a href="navigation_horizontal_click.html"
-											class="nav-link">Submenu on click</a></li>
-									<li class="nav-item"><a href="navigation_horizontal_hover.html"
-											class="nav-link">Submenu on hover</a></li>
-									<li class="nav-item"><a href="navigation_horizontal_elements.html"
-											class="nav-link">With custom elements</a></li>
-									<li class="nav-item"><a href="navigation_horizontal_tabs.html"
-											class="nav-link">Tabbed navigation</a></li>
-									<li class="nav-item"><a href="navigation_horizontal_disabled.html"
-											class="nav-link">Disabled navigation links</a></li>
-									<li class="nav-item"><a href="navigation_horizontal_mega.html"
-											class="nav-link">Horizontal mega menu</a></li>
+									<li class="nav-item"><a href="navigation_horizontal_click.html" class="nav-link">Submenu on click</a></li>
+									<li class="nav-item"><a href="navigation_horizontal_hover.html" class="nav-link">Submenu on hover</a></li>
+									<li class="nav-item"><a href="navigation_horizontal_elements.html" class="nav-link">With custom elements</a></li>
+									<li class="nav-item"><a href="navigation_horizontal_tabs.html" class="nav-link">Tabbed navigation</a></li>
+									<li class="nav-item"><a href="navigation_horizontal_disabled.html" class="nav-link">Disabled navigation links</a></li>
+									<li class="nav-item"><a href="navigation_horizontal_mega.html" class="nav-link">Horizontal mega menu</a></li>
 								</ul>
 							</li>
 							<li class="nav-item nav-item-submenu">
@@ -544,20 +446,16 @@
 										<a href="#" class="nav-link"><i class="icon-firefox"></i> Second level with
 											child</a>
 										<ul class="nav nav-group-sub">
-											<li class="nav-item"><a href="#" class="nav-link"><i
-														class="icon-android"></i> Third level</a></li>
+											<li class="nav-item"><a href="#" class="nav-link"><i class="icon-android"></i> Third level</a></li>
 											<li class="nav-item nav-item-submenu">
 												<a href="#" class="nav-link"><i class="icon-apple2"></i> Third level
 													with child</a>
 												<ul class="nav nav-group-sub">
-													<li class="nav-item"><a href="#" class="nav-link"><i
-																class="icon-html5"></i> Fourth level</a></li>
-													<li class="nav-item"><a href="#" class="nav-link"><i
-																class="icon-css3"></i> Fourth level</a></li>
+													<li class="nav-item"><a href="#" class="nav-link"><i class="icon-html5"></i> Fourth level</a></li>
+													<li class="nav-item"><a href="#" class="nav-link"><i class="icon-css3"></i> Fourth level</a></li>
 												</ul>
 											</li>
-											<li class="nav-item"><a href="#" class="nav-link"><i
-														class="icon-windows"></i> Third level</a></li>
+											<li class="nav-item"><a href="#" class="nav-link"><i class="icon-windows"></i> Third level</a></li>
 										</ul>
 									</li>
 									<li class="nav-item"><a href="#" class="nav-link"><i class="icon-chrome"></i> Second
@@ -583,26 +481,11 @@
 
 			<!-- Content area -->
 			<div class="content">
-
-				<!-- Main charts -->
-
-				<!-- Dashboard content -->
 				<div class="card">
-					<div class="card-header header-elements-sm-inline">
-						<h6 class="card-title">Laporan</h6>
-						<div class="header-elements">
-							<a
-								class="text-default daterange-ranges font-weight-semibold cursor-pointer dropdown-toggle">
-								<i class="icon-calendar3 mr-2"></i>
-								<span></span>
-							</a>
-						</div>
-					</div>
-
 					<div class="card-body d-md-flex align-items-md-center justify-content-md-between flex-md-wrap">
+
 						<div class="d-flex align-items-center mb-3 mb-md-0">
-							<a href="#"
-								class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon">
+							<a href="#" class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon">
 								<i class="icon-alarm"></i>
 							</a>
 							<div class="ml-3">
@@ -613,8 +496,7 @@
 
 
 						<div class="d-flex align-items-center mb-3 mb-md-0">
-							<a href="#"
-								class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon">
+							<a href="#" class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon">
 								<i class="icon-checkmark3"></i>
 							</a>
 							<div class="ml-3">
@@ -623,8 +505,7 @@
 							</div>
 						</div>
 						<div class="d-flex align-items-center mb-3 mb-md-0">
-							<a href="#"
-								class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon">
+							<a href="#" class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon">
 								<i class="icon-thumbs-up2"></i>
 							</a>
 							<div class="ml-3">
@@ -633,8 +514,7 @@
 							</div>
 						</div>
 						<div class="d-flex align-items-center mb-3 mb-md-0">
-							<a href="#"
-								class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon">
+							<a href="#" class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon">
 								<i class="icon-cross2"></i>
 							</a>
 							<div class="ml-3">
@@ -642,110 +522,174 @@
 								<span class="text-muted">Reject</span>
 							</div>
 						</div>
-
 						<div>
-							<a href="#" class="btn bg-teal-400"><i class="icon-file-excel mr-2"></i> Generate
-								Excel</a>
+							<button class="btn bg-teal-400" data-toggle="modal" data-target="#exampleModal"><i class="icon-file-excel mr-2"></i> Edit Instansi</button>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header header-elements-sm-inline  mb-0 pb-0">
+						<h6 class="card-title">Laporan</h6>
+					</div>
+					<div class="card-body d-md-flex align-items-md-center justify-content-md-between flex-md-wrap">
+						<div class="table-responsive  ">
+							<table class="table text-nowrap" id="datatable-excel">
+								<thead>
+									<tr>
+										<th style="width: 50px">Tgl</th>
+										<th style="width: 100px">Author</th>
+										<th>Laporan</th>
+										<th>Status</th>
+										<th>Kategori</th>
+										<th class="text-center" style="width: 20px;"><i class="icon-arrow-down12"></i></th>
+									</tr>
+								</thead>
+								<tbody>
+
+									{{range .laporan}}
+									<tr>
+
+
+										<td class="text-center">
+											<a href="/d/{{.Id}}" class="text-default">
+												<div class="font-weight-semibold">{{.Time}}</div>
+											</a>
+										</td>
+										<td class="">
+											<a href="/d/{{.Id}}" class="text-default">
+												<div class="font-weight-semibold">{{.FullName}}</div>
+											</a>
+
+										</td>
+										<td>
+											<a href="/d/{{.Id}}" class="text-default">
+												<div class="font-weight-semibold">{{.Title}}</div>
+											</a>
+										</td>
+
+										<td>
+											<a href="/d/{{.Id}}" class="text-default">
+												<div class="font-weight-semibold">{{.Kategori}}</div>
+											</a></td>
+										<td>
+											<form action="/api/post/ganti/status" method="post" onchange="gantiStatus(this)">
+												<input type="hidden" name="id_laporan" value="{{.Id}}">
+												<select name="status" class="form-control" id="ganti_status">
+													{{if eq .Status "Sedang Di Verifikasi"}}
+													<option value="Sedang Di Verifikasi" selected>Verifikasi</option>
+													<option value="Sedang Process">Process</option>
+													<option value="Finish">Finish</option>
+													<option value="Reject">Reject</option>
+													{{else}}
+														{{if eq .Status "Sedang Process"}}
+														<option value="Sedang Di Verifikasi">Verifikasi</option>
+														<option value="Sedang Process" selected>Process</option>
+														<option value="Finish">Finish</option>
+														<option value="Reject">Reject</option>
+														{{else}}
+															{{if eq .Status "Finish"}}
+															<option value="Sedang Di Verifikasi">Verifikasi</option>
+															<option value="Sedang Process">Process</option>
+															<option value="Finish" selected>Finish</option>
+															<option value="Reject">Reject</option>
+															{{else}}
+																<option value="Sedang Di Verifikasi">Verifikasi</option>
+																<option value="Sedang Process">Process</option>
+																<option value="Finish">Finish</option>
+																<option value="Reject" selected>Reject</option>
+																{{end}}
+																{{end}}
+
+																{{end}}
+
+												</select>
+											</form>
+
+										</td>
+
+										<td class="text-center">
+											<div class="list-icons">
+												<div class="list-icons-item dropdown">
+													<a href="#" class="list-icons-item dropdown-toggle caret-0" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+													<div class="dropdown-menu dropdown-menu-right">
+
+														<a href="#" class="dropdown-item"><i class="icon-sync text-warning"></i>
+															Edit</a>
+														<a href="/api/delete/{{.Id}}" class="dropdown-item"><i class="icon-cross2 text-danger"></i>
+															Delete</a>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									{{end}}
+								</tbody>
+							</table>
 						</div>
 					</div>
 
+				</div>
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="card">
+							<div class="card-header">
+								<div class="row">
+									<div class="col-md-6">
+										<h6 class="card-title">Blog</h6>
+									</div>
+									<div class="col-md-6">
+										<a href="" class="btn btn-primary float-right">Create</a>
+									</div>
+								</div>
+							</div>
+							<div class="table-responsive">
+								<table class="table datatable-basic text-nowrap">
+									<thead>
+										<tr>
+											<th style="width: 50px">Tgl</th>
+											<th>Description</th>
+											<th class="text-center" style="width: 20px;"><i class="icon-arrow-down12"></i></th>
+										</tr>
+									</thead>
+									<tbody>
 
+										{{range .Blog}}
+										<tr>
+											<td class="text-center">
+												<div class="font-weight-semibold">{{.Time}}</div>
 
-					<div class="table-responsive">
-						<table class="table text-nowrap">
-							<thead>
-								<tr>
-									<th style="width: 50px">Tgl</th>
-									<th style="width: 100px">Author</th>
-									<th>Laporan</th>
-									<th>Status</th>
-									<th>Kategori</th>
-									<th class="text-center" style="width: 20px;"><i class="icon-arrow-down12"></i></th>
-								</tr>
-							</thead>
-							<tbody>
+											</td>
 
-								{{range .laporan}}
-								<tr>
+											<td>
+												<a href="#" class="text-default">
+													<div class="font-weight-semibold">{{.Title}}</div>
+													<span class="text-muted">Try any carousel control and reduce the
+														screen width below...</span>
+												</a>
+											</td>
+											<td class="text-center">
+												<div class="list-icons">
+													<div class="list-icons-item dropdown">
+														<a href="#" class="list-icons-item dropdown-toggle caret-0" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+														<div class="dropdown-menu dropdown-menu-right">
 
-
-									<td class="text-center">
-										<div class="font-weight-semibold">{{.Time}}</div>
-									</td>
-									<td class="">
-										<div class="font-weight-semibold">{{.FullName}}</div>
-									</td>
-									<td>
-										<a href="/d/{{.Id}}" class="text-default">
-											<div class="font-weight-semibold">{{.Title}}</div>
-										</a>
-									</td>
-
-									<td>
-										<a href="/d/{{.Id}}" class="text-default">
-											<div class="font-weight-semibold">{{.Kategori}}</div>
-										</a></td>
-									<td>
-										<form action="/api/post/ganti/status" method="post"
-											onchange="gantiStatus(this)">
-											<input type="hidden" name="id_laporan" value="{{.Id}}">
-											<select name="status" class="form-control" id="ganti_status">
-												{{if eq .Status "Sedang Di Verifikasi"}}
-												<option value="Sedang Di Verifikasi" selected>Verifikasi</option>
-												<option value="Sedang Process">Process</option>
-												<option value="Finish">Finish</option>
-												<option value="Reject">Reject</option>
-												{{else}}
-												{{if eq .Status "Sedang Process"}}
-												<option value="Sedang Di Verifikasi">Verifikasi</option>
-												<option value="Sedang Process" selected>Process</option>
-												<option value="Finish">Finish</option>
-												<option value="Reject">Reject</option>
-												{{else}}
-												{{if eq .Status "Finish"}}
-												<option value="Sedang Di Verifikasi">Verifikasi</option>
-												<option value="Sedang Process">Process</option>
-												<option value="Finish" selected>Finish</option>
-												<option value="Reject">Reject</option>
-												{{else}}
-												<option value="Sedang Di Verifikasi">Verifikasi</option>
-												<option value="Sedang Process">Process</option>
-												<option value="Finish">Finish</option>
-												<option value="Reject" selected>Reject</option>
-												{{end}}
-												{{end}}
-
-												{{end}}
-
-											</select>
-											<!-- <input type="submit" class="d-none submit_ganti_status"> -->
-										</form>
-
-									</td>
-
-									<td class="text-center">
-										<div class="list-icons">
-											<div class="list-icons-item dropdown">
-												<a href="#" class="list-icons-item dropdown-toggle caret-0"
-													data-toggle="dropdown"><i class="icon-menu7"></i></a>
-												<div class="dropdown-menu dropdown-menu-right">
-
-													<a href="#" class="dropdown-item"><i
-															class="icon-sync text-warning"></i>
-														Edit</a>
-													<a href="/api/delete/{{.Id}}" class="dropdown-item"><i
-															class="icon-cross2 text-danger"></i>
-														Delete</a>
+															<a href="#" class="dropdown-item"><i class="icon-sync text-warning"></i>
+																Edit</a>
+															<a href="/api/delete/{{.Id}}" class="dropdown-item"><i class="icon-cross2 text-danger"></i>
+																Delete</a>
+														</div>
+													</div>
 												</div>
-											</div>
-										</div>
-									</td>
-								</tr>
-								{{end}}
-							</tbody>
-						</table>
+											</td>
+										</tr>
+										{{end}}
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
 				</div>
+				<!-- /dashboard content -->
 
 			</div>
 			<!-- /content area -->
@@ -756,12 +700,29 @@
 	</div>
 	<!-- /page content -->
 
-
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Footer -->
 	<div class="navbar navbar-expand-lg navbar-light">
 		<div class="text-center d-lg-none w-100">
-			<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse"
-				data-target="#navbar-footer">
+			<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
 				<i class="icon-unfold mr-2"></i>
 				Footer
 			</button>
@@ -769,24 +730,45 @@
 
 		<div class="navbar-collapse collapse" id="navbar-footer">
 			<span class="navbar-text">
-				&copy; 2015 - 2018. <a href="#">Limitless Web App Kit</a> by <a
-					href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
+				&copy; 2015 - 2018. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
 			</span>
 
 			<ul class="navbar-nav ml-lg-auto">
-				<li class="nav-item"><a href="https://kopyov.ticksy.com/" class="navbar-nav-link" target="_blank"><i
-							class="icon-lifebuoy mr-2"></i> Support</a></li>
-				<li class="nav-item"><a href="http://demo.interface.club/limitless/docs/" class="navbar-nav-link"
-						target="_blank"><i class="icon-file-text2 mr-2"></i> Docs</a></li>
-				<li class="nav-item"><a
-						href="https://themeforest.net/item/limitless-responsive-web-application-kit/13080328?ref=kopyov"
-						class="navbar-nav-link font-weight-semibold"><span class="text-pink-400"><i
-								class="icon-cart2 mr-2"></i> Purchase</span></a></li>
+				<li class="nav-item"><a href="https://kopyov.ticksy.com/" class="navbar-nav-link" target="_blank"><i class="icon-lifebuoy mr-2"></i> Support</a></li>
+				<li class="nav-item"><a href="http://demo.interface.club/limitless/docs/" class="navbar-nav-link" target="_blank"><i class="icon-file-text2 mr-2"></i> Docs</a></li>
+				<li class="nav-item"><a href="https://themeforest.net/item/limitless-responsive-web-application-kit/13080328?ref=kopyov" class="navbar-nav-link font-weight-semibold"><span class="text-pink-400"><i class="icon-cart2 mr-2"></i>
+							Purchase</span></a></li>
 			</ul>
 		</div>
 	</div>
 	<!-- /footer -->
 
 </body>
+<script src="admin/assets/js/plugins/tables/datatables/datatables.min.js"></script>
+<script src="admin/assets/js/demo_pages/datatables_basic.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" charset="utf-8"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js" charset="utf-8"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js" charset="utf-8"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#datatable-excel').DataTable({
+			dom: 'Bfrtip',
+			buttons: [{
+					extend: 'pdf',
+					className: 'btn bg-teal-400'
+				},
+				{
+					extend: 'excel',
+					className: 'btn bg-teal-400'
+				}
+			]
+		});
+	});
+</script>
+
 
 </html>

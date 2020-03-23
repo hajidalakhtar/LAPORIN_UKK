@@ -4,9 +4,9 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"laporin_go/app/helper"
 	"laporin_go/database"
 	"net/http"
-	"laporin_go/app/helper"
 	"sort"
 
 	"github.com/foolin/goview"
@@ -40,14 +40,13 @@ func PostRegister(w http.ResponseWriter, r *http.Request) {
 	}
 	defer db.Close()
 
-	_, err = db.Exec("INSERT INTO `users`(`id`, `Username`, `Password`,`Foto_profile`, `Gender`, `Role`, `Bidang`,`Alamat`, `Email`, `FullName`, `NoTelp`) VALUES (?,?,?,?,?,?,?,?,?,?,?)", nil, username, hash,`default.png`, gender, role, bidang, alamat, email, fullname, notelp)
+	_, err = db.Exec("INSERT INTO `users`(`id`, `Username`, `Password`,`Foto_profile`, `Gender`, `Role`, `Bidang`,`Alamat`, `Email`, `FullName`, `NoTelp`) VALUES (?,?,?,?,?,?,?,?,?,?,?)", nil, username, hash, `default.png`, gender, role, bidang, alamat, email, fullname, notelp)
 	if err != nil {
 		fmt.Println(err.Error())
 		return
 	}
 	// fmt.Println("insert success!")
 	http.Redirect(w, r, "/login", 301)
-
 
 }
 
@@ -63,19 +62,28 @@ func PostEditUser(w http.ResponseWriter, r *http.Request) {
 	notelp := r.FormValue("notelp")
 	role := "user"
 	hash, err := bcrypt.GenerateFromPassword([]byte(password), 14)
-
+	fmt.Println(notelp)
 	db, err := database.Connect()
 	if err != nil {
 		fmt.Println(err.Error())
 		return
 	}
 	defer db.Close()
-	_, err = db.Exec("UPDATE `users` SET `id`=?,`Username`=?,`Password`=?,`Foto_profile`=?,`Gender`=?,`Role`=?,`Bidang`=?,`Alamat`=?,`Email`=?`FullName`=?,`NoTelp`=? WHERE id = ?",nil,username,hash,"default.png",gender,role,bidang,alamat,email,fullname,notelp,id)
+	_, err = db.Exec("UPDATE `users` SET `id`= ?,`Username`= ?,`Password`= ?,`Foto_profile`= ?,`Gender`= ?,`Role`= ?,`Bidang`= ?,`Alamat`= ?,`Email`= ?,`FullName`= ?,`NoTelp`= ? WHERE id = ?", id, username, hash, "default.png", gender, role, bidang, alamat, email, fullname, notelp, id)
 
 	if err != nil {
 		fmt.Println(err.Error())
 		return
 	}
+	http.Redirect(w, r, r.Header.Get("Referer"), 302)
+
+}
+
+func GetDeleteUser(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["id"]
+	delete := helper.PostDelete("users", id)
+	fmt.Println(delete)
 	http.Redirect(w, r, r.Header.Get("Referer"), 302)
 
 }
@@ -93,7 +101,7 @@ func ViewProfile(w http.ResponseWriter, r *http.Request) {
 	}
 	defer db.Close()
 
-// get user
+	// get user
 	user, err := db.Query("SELECT * FROM `users` WHERE Username = ?", vars["username"])
 	if err != nil {
 		fmt.Println(err.Error())
@@ -115,7 +123,7 @@ func ViewProfile(w http.ResponseWriter, r *http.Request) {
 		users = append(users, each)
 	}
 
-// get laporan
+	// get laporan
 	var laporan []model.Laporan
 	lapor, err := db.Query("SELECT * FROM `laporan` WHERE User_id = ?", users[0].Id)
 	if err != nil {
@@ -124,10 +132,9 @@ func ViewProfile(w http.ResponseWriter, r *http.Request) {
 	}
 	defer lapor.Close()
 
-
 	for lapor.Next() {
 		var each = model.Laporan{}
-		var err = lapor.Scan(&each.Id, &each.Title, &each.Laporan, &each.User_id,&each.Username,&each.User_Foto,&each.Foto, &each.FullName, &each.Kategori, &each.Time, &each.Status)
+		var err = lapor.Scan(&each.Id, &each.Title, &each.Laporan, &each.User_id, &each.Username, &each.User_Foto, &each.Foto, &each.FullName, &each.Kategori, &each.Time, &each.Status)
 
 		if err != nil {
 			fmt.Println(err.Error())
@@ -139,24 +146,23 @@ func ViewProfile(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(laporan)
 	session_user_id := fmt.Sprintf("%v", session.Values["user_id"])
 	// json.NewEncoder(w).Encode(users)
-	isFollow := helper.GetCountWhereFollow(session_user_id,users[0].Id)
+	isFollow := helper.GetCountWhereFollow(session_user_id, users[0].Id)
 	fmt.Println(isFollow)
-
 
 	// goview.Render(w, http.StatusOK, "user_profile.html", goview.M{"user": users})
 	goview.Render(w, http.StatusOK, "user_profile.html", goview.M{
-		"user_id":  users[0].Id,
-		"session_user_id":	session_user_id,
-		"username": users[0].Username,
-		"isFollow":isFollow,
-		"password": users[0].Password,
-		"gender":   users[0].Gender,
-		"role":     users[0].Role,
-		"alamat":   users[0].Alamat,
-		"email":    users[0].Email,
-		"fullname": users[0].FullName,
-		"notelp":   users[0].NoTelp,
-		"laporan":  laporan,
+		"user_id":         users[0].Id,
+		"session_user_id": session_user_id,
+		"username":        users[0].Username,
+		"isFollow":        isFollow,
+		"password":        users[0].Password,
+		"gender":          users[0].Gender,
+		"role":            users[0].Role,
+		"alamat":          users[0].Alamat,
+		"email":           users[0].Email,
+		"fullname":        users[0].FullName,
+		"notelp":          users[0].NoTelp,
+		"laporan":         laporan,
 	})
 
 }
@@ -299,27 +305,27 @@ func ViewHome(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-// get Follow
-follow, err := db.Query("SELECT * FROM `follow` WHERE user_id = ?", user_id)
-if err != nil {
-	fmt.Println(err.Error())
-	return
-}
-defer follow.Close()
-
-var follows []model.Follow
-
-for follow.Next() {
-	var each = model.Follow{}
-	var err = follow.Scan(&each.Id, &each.User_id, &each.Target_id)
-
+	// get Follow
+	follow, err := db.Query("SELECT * FROM `follow` WHERE user_id = ?", user_id)
 	if err != nil {
 		fmt.Println(err.Error())
 		return
 	}
+	defer follow.Close()
 
-	follows = append(follows, each)
-}
+	var follows []model.Follow
+
+	for follow.Next() {
+		var each = model.Follow{}
+		var err = follow.Scan(&each.Id, &each.User_id, &each.Target_id)
+
+		if err != nil {
+			fmt.Println(err.Error())
+			return
+		}
+
+		follows = append(follows, each)
+	}
 	var result []model.Laporan
 
 	rows, err := db.Query("SELECT * FROM `laporan` WHERE User_id = ?", user_id)
@@ -329,10 +335,9 @@ for follow.Next() {
 	}
 	defer rows.Close()
 
-
 	for rows.Next() {
 		var each = model.Laporan{}
-		var err = rows.Scan(&each.Id, &each.Title, &each.Laporan, &each.User_id,&each.Username,&each.User_Foto,&each.Foto, &each.FullName, &each.Kategori, &each.Time, &each.Status)
+		var err = rows.Scan(&each.Id, &each.Title, &each.Laporan, &each.User_id, &each.Username, &each.User_Foto, &each.Foto, &each.FullName, &each.Kategori, &each.Time, &each.Status)
 
 		if err != nil {
 			fmt.Println(err.Error())
@@ -342,8 +347,7 @@ for follow.Next() {
 		result = append(result, each)
 	}
 
-
-	for i := 0;i < len(follows);i++ {
+	for i := 0; i < len(follows); i++ {
 		rows, err := db.Query("SELECT * FROM `laporan` WHERE User_id = ?", follows[i].Target_id)
 		if err != nil {
 			fmt.Println(err.Error())
@@ -351,10 +355,9 @@ for follow.Next() {
 		}
 		defer rows.Close()
 
-
 		for rows.Next() {
 			var each = model.Laporan{}
-			var err = rows.Scan(&each.Id, &each.Title, &each.Laporan, &each.User_id,&each.Username,&each.User_Foto,&each.Foto, &each.FullName, &each.Kategori, &each.Time, &each.Status)
+			var err = rows.Scan(&each.Id, &each.Title, &each.Laporan, &each.User_id, &each.Username, &each.User_Foto, &each.Foto, &each.FullName, &each.Kategori, &each.Time, &each.Status)
 
 			if err != nil {
 				fmt.Println(err.Error())
@@ -368,7 +371,7 @@ for follow.Next() {
 	defer db.Close()
 
 	sort.SliceStable(result, func(i, j int) bool {
-	    return result[j].Id < result[i].Id
+		return result[j].Id < result[i].Id
 	})
 
 	goview.Render(w, http.StatusOK, "home.html", goview.M{"username": session.Values["username"],
@@ -435,7 +438,6 @@ func ViewRegister(w http.ResponseWriter, r *http.Request) {
 func PostLike(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 
-
 	db, err := database.Connect()
 	if err != nil {
 		fmt.Println(err.Error())
@@ -496,17 +498,55 @@ func PostFollow(w http.ResponseWriter, r *http.Request) {
 
 }
 
-
 func PostUnfollow(w http.ResponseWriter, r *http.Request) {
+
 	vars := mux.Vars(r)
 	db, err := database.Connect()
 	if err != nil {
 		fmt.Println(err.Error())
 	}
-	_, err = db.Exec("DELETE FROM `follow` WHERE target_id = ? AND user_id = ? LIMIT 1",  vars["target_id"], vars["user_id"])
+	_, err = db.Exec("DELETE FROM `follow` WHERE target_id = ? AND user_id = ? LIMIT 1", vars["target_id"], vars["user_id"])
 	if err != nil {
 		fmt.Println(err.Error())
 	}
 	defer db.Close()
 	http.Redirect(w, r, r.Header.Get("Referer"), 302)
+}
+
+func ViewGenetateExcel(w http.ResponseWriter, r *http.Request) {
+	// get laporan
+	w.Header().Set("Content-Type", "application/vnd-ms-excel")
+	w.Header().Set("Content-Disposition:", "attachment; filename=Data Pegawai.xls")
+	db, err := database.Connect()
+	if err != nil {
+		fmt.Println(err.Error())
+		return
+	}
+	defer db.Close()
+
+	var laporan []model.Laporan
+	lapor, err := db.Query("SELECT * FROM `laporan` WHERE Kategori = ?", "Administarasi")
+	if err != nil {
+		fmt.Println(err.Error())
+		return
+	}
+	defer lapor.Close()
+
+	for lapor.Next() {
+		var each = model.Laporan{}
+		var err = lapor.Scan(&each.Id, &each.Title, &each.Laporan, &each.User_id, &each.Username, &each.User_Foto, &each.Foto, &each.FullName, &each.Kategori, &each.Time, &each.Status)
+
+		if err != nil {
+			fmt.Println(err.Error())
+			return
+		}
+
+		laporan = append(laporan, each)
+	}
+
+	errview := goview.Render(w, http.StatusOK, "generate.html", goview.M{
+		"laporan": laporan})
+
+	fmt.Println(errview)
+
 }
